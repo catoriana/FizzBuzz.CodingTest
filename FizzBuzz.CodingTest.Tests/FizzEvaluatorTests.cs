@@ -11,8 +11,15 @@ public class FizzEvaluatorTests
 
     [Theory]
     [InlineData(3, true)]
+    [InlineData(5, false)]
+    [InlineData(2, false)]
+    [InlineData(15, false)]
     public void CheckFizzBuzz_ShouldReturnFizz_WhenDivisibleBy3Only(int number, bool expectedResult)
     {
-       Assert.Fail();
+        // Act
+        bool result = _evaluator.CheckFizzBuzz(number);
+
+        // Assert
+        Assert.Equal(expectedResult, result);
     }
 }
