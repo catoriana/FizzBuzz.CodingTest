@@ -8,7 +8,7 @@ namespace FizzBuzz.CodingTest;
 
 public interface IFizzBuzzEvaluator
 {
-    string OutputMessage { get; }
+    string OutputMessage { get; set; }
 
     bool CheckFizzBuzz(int number);
 }

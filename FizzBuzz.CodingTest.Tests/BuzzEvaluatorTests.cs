@@ -8,6 +8,13 @@ namespace FizzBuzz.CodingTest.Tests;
 
 public class BuzzEvaluatorTests
 {
+    private readonly IFizzBuzzEvaluator _evaluator;
+
+    public BuzzEvaluatorTests()
+    {
+        _evaluator = new BuzzEvaluator();
+    }
+
     [Theory]
     [InlineData(5, true)]
     [InlineData(3, false)]
@@ -15,6 +22,14 @@ public class BuzzEvaluatorTests
     [InlineData(15, false)]
     public void CheckFizzBuzz_ShouldReturnBuzz_WhenDivisibleBy5Only(int number, bool expectedResult)
     {
-        Assert.Fail();
+        // Arrange
+        var outputMessage = "Buzz";
+
+        // Act
+        bool result = _evaluator.CheckFizzBuzz(number);
+
+        // Assert
+        Assert.Equal(expectedResult, result);
+        Assert.Equal(outputMessage, _evaluator.OutputMessage);
     }
 }

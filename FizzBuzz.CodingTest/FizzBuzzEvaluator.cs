@@ -8,10 +8,14 @@ namespace FizzBuzz.CodingTest;
 
 public class FizzBuzzEvaluator : IFizzBuzzEvaluator
 {
-    public string OutputMessage => throw new NotImplementedException();
+    public string OutputMessage { get; set; } = "FizzBuzz";
 
     public bool CheckFizzBuzz(int number)
     {
-        throw new NotImplementedException();
+        if (number % 3 == 0 && number % 5 == 0)
+        {
+            return true;
+        }
+        return false;
     }
 }
