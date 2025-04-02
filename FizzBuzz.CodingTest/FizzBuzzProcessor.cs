@@ -8,8 +8,16 @@ using System.Threading.Tasks;
 
 namespace FizzBuzz.CodingTest;
 
+/// <summary>
+/// The Fizz Buzz Proccessor - Entry Point for initial Fizz Buzz Processing
+/// </summary>
+/// <seealso cref="IFizzBuzzProcessor" />
 public class FizzBuzzProcessor : IFizzBuzzProcessor
 {
+    /// <summary>
+    /// Gets all classes that implement IFizzBuzzEvaluator through reflection.
+    /// </summary>
+    /// <returns>returns a list of IFizzBuzzEvaluators.</returns>
     public List<IFizzBuzzEvaluator> GetEvaluators()
     {
         Type type = typeof(IFizzBuzzEvaluator);
@@ -29,6 +37,12 @@ public class FizzBuzzProcessor : IFizzBuzzProcessor
         return evaluators;
     }
 
+    /// <summary>
+    /// Processes a range of numbers from 1 to 100 to output.
+    /// </summary>
+    /// <param name="startRange">int start range of number.</param>
+    /// <param name="endRange">int end ragnge of number</param>
+    /// <returns>returns a string, with a list of values.</returns>
     public string Process(int startRange, int endRange)
     {
         var output = new List<string>();
